@@ -1,16 +1,10 @@
-import { RouterProvider } from 'react-router-dom';
-import { AppProviders } from '@/app/providers/AppProviders';
-import { router } from '@/app/routes/router';
-import * as styles from '@/app/App.css';
-import { themeClass } from '@/shared/styles/theme.css';
-export const App = () => {
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from '@/app/routes/AppRoutes';
+
+export function App() {
   return (
-    <AppProviders>
-      <div className={`${themeClass} ${styles.appShell}`}>
-        <main className={styles.main}>
-          <RouterProvider router={router} />
-        </main>
-      </div>
-    </AppProviders>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
-};
+}

@@ -1,11 +1,19 @@
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey =
+  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ??
+  import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl) {
+  throw new Error('Missing environment variable: VITE_SUPABASE_URL');
+}
+
+if (!supabaseKey) {
+  throw new Error(
+    'Missing environment variable: VITE_SUPABASE_PUBLISHABLE_KEY or VITE_SUPABASE_ANON_KEY'
+  );
+}
+
 export const env = {
-  supabaseUrl: import.meta.env.VITE_SUPABASE_URL ?? '',
-  supabaseAnonKey: import.meta.env.VITE_SUPABASE_ANON_KEY ?? '',
-};
-export const validateSupabaseEnv = () => {
-  if (!env.supabaseUrl || !env.supabaseAnonKey) {
-    throw new Error(
-      'Supabase 환경 변수가 없습니다. .env.local에 VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY를 설정해주세요.'
-    );
-  }
-};
+  supabaseUrl,
+  supabaseKey,
+} as const;
