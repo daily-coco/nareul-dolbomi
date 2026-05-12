@@ -6,6 +6,7 @@ import { ROUTES } from '@/app/routes/paths';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { SignupPage } from '@/pages/auth/SignupPage';
 import { RecordsListPage } from '@/pages/records/RecordsListPage';
+import { CarsSubjectsPage } from '@/pages/care-subjects/CarsSubjectsPage';
 function HomePage() {
   return (
     <main style={{ padding: '2rem' }}>
@@ -23,6 +24,7 @@ export function AppRoutes() {
       <Route element={<GuestOnly />}>
         <Route path={ROUTES.login} element={<LoginPage />} />
         <Route path={ROUTES.signup} element={<SignupPage />} />
+        <Route path={ROUTES.careSubjects} element={<CarsSubjectsPage />} />
       </Route>
 
       <Route element={<RequireAuth />}>

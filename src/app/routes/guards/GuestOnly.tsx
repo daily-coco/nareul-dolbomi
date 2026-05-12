@@ -14,9 +14,9 @@ export function GuestOnly() {
     );
   }
 
-  if (session) {
-    return <Navigate to={ROUTES.records} replace />;
-  }
+  // if (session) {
+  //   return <Navigate to={ROUTES.records} replace />;
+  // }
 
   return <Outlet />;
 }

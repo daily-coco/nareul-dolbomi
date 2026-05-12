@@ -40,32 +40,26 @@ export interface Database {
         Row: {
           id: string;
           user_id: string;
-          type: CareSubjectType;
           name: string;
-          birth_date: string | null;
-          note: string | null;
+          description: string | null;
           created_at: string;
-          updated_at: string;
+          updated_at: string | null;
         };
         Insert: {
           id?: string;
           user_id: string;
-          type?: CareSubjectType;
           name: string;
-          birth_date?: string | null;
-          note?: string | null;
+          description?: string | null;
           created_at?: string;
-          updated_at?: string;
+          updated_at?: string | null;
         };
         Update: {
           id?: string;
           user_id?: string;
-          type?: CareSubjectType;
           name?: string;
-          birth_date?: string | null;
-          note?: string | null;
+          description?: string | null;
           created_at?: string;
-          updated_at?: string;
+          updated_at?: string | null;
         };
         Relationships: [];
       };
