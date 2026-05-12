@@ -1,3 +1,5 @@
+// src/app/routes/guards/GuestOnly.tsx
+
 import { Navigate, Outlet } from 'react-router-dom';
 
 import { ROUTES } from '@/app/routes/paths';
@@ -14,9 +16,9 @@ export function GuestOnly() {
     );
   }
 
-  // if (session) {
-  //   return <Navigate to={ROUTES.records} replace />;
-  // }
+  if (session) {
+    return <Navigate to={ROUTES.records} replace />;
+  }
 
   return <Outlet />;
 }

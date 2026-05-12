@@ -11,7 +11,7 @@ export const careSubjectQueryKeys = {
   lists: () => [...careSubjectQueryKeys.all, 'list'] as const,
 };
 
-export const useCareSubjectQuery = () => {
+export const useCareSubjectsQuery = () => {
   return useQuery({
     queryKey: careSubjectQueryKeys.lists(),
     queryFn: getCareSubjects,

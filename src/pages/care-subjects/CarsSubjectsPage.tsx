@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import {
-  useCareSubjectQuery,
+  useCareSubjectsQuery,
   useCreateCareSubjectMutation,
   useDeleteCareSubjectMutation,
   useUpdateCareSubjectMutation,
 } from '@/features/care-subjects/api/careSubject.queries';
 import type { CareSubject } from '@/features/care-subjects/model/careSubject.types';
 import type { CareSubjectFormValues } from '@/features/care-subjects/model/careSubject.schemas';
-import { CareSubjectForm } from '@/features/care-subjects/ui/careSubjectForm';
-import { CareSubjectList } from '@/features/care-subjects/ui/careSubjectList';
+import { CareSubjectForm } from '@/features/care-subjects/ui/CareSubjectForm';
+import { CareSubjectList } from '@/features/care-subjects/ui/CareSubjectList';
 import * as styles from '@/features/care-subjects/ui/CareSubjectsPage.css.ts';
 
 const getErrorMessage = (error: unknown): string | null => {
@@ -19,12 +19,12 @@ const getErrorMessage = (error: unknown): string | null => {
   return null;
 };
 
-export const CarsSubjectsPage = () => {
+export const CareSubjectsPage = () => {
   const [editingCareSubject, setEditingCareSubject] =
     useState<CareSubject | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  const careSubjectsQuery = useCareSubjectQuery();
+  const careSubjectsQuery = useCareSubjectsQuery();
   const createCareSubjectMutation = useCreateCareSubjectMutation();
   const updateCareSubjectMutation = useUpdateCareSubjectMutation();
   const deleteCareSubjectMutation = useDeleteCareSubjectMutation();
