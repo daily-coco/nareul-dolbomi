@@ -1,6 +1,10 @@
-import type { PropsWithChildren } from 'react';
-import { QueryProvider } from '@/app/providers/QueryProvider';
+import type { ReactNode } from 'react';
+import { QueryProvider } from './QueryProvider';
 
-export const AppProviders = ({ children }: PropsWithChildren) => {
+type AppProvidersProps = {
+  children: ReactNode;
+};
+
+export const AppProviders = ({ children }: AppProvidersProps) => {
   return <QueryProvider>{children}</QueryProvider>;
 };

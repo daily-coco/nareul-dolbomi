@@ -1,10 +1,10 @@
-import { BrowserRouter } from 'react-router-dom';
-import { AppRoutes } from '@/app/routes/AppRoutes';
+import { AppProviders } from './providers/AppProviders';
+import { AppRoutes } from './routes/AppRoutes';
 
-export function App() {
+export const App = () => {
   return (
-    <BrowserRouter>
+    <AppProviders>
       <AppRoutes />
-    </BrowserRouter>
+    </AppProviders>
   );
-}
+};

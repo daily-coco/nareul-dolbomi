@@ -6,4 +6,5 @@ export const ROUTES = {
   recordNew: '/records/new',
   settings: '/settings',
   admin: '/admin',
+  careSubjects: '/care-subjects',
 } as const;
